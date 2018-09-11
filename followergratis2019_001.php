@@ -1,11 +1,10 @@
 <?php
-header("Refresh:120");
+
 set_time_limit(100);
 error_reporting(0);
 ignore_user_abort(1);
 session_start();
 require_once('fungsi.php');
-
 
 
 
@@ -21,13 +20,8 @@ $_SESSION['data'] = array('cookies' => 'ds_user=followergratis2019_001;shbid=568
 
 
 
-
-
-
-
-
-
-if($_time>6){
+while(true){
+	if($_time>6){
       $jumlah= "15";
         $_POST['tipe'] = "followers";
         $target = "342582658";
@@ -125,5 +119,16 @@ else
 	endfor;
 
 }
+	
+	sleep(60);
+	
+}
+
+
+
+
+
+
+
 
 ?>
