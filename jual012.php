@@ -51,7 +51,8 @@ while(true){
 			$cross = json_decode($cross[1]);
 			print $i.'. <b>@'.$data_session['username'].' Follow => '.$listids[$i].PHP_EOL;
 			flush();
-      sleep(60);
+      $rand = [97,101,103,93,107,111,113,117];
+     		sleep($rand[rand(0,7)]);
 	endfor;
 }
 else
