@@ -6,7 +6,7 @@ session_start();
 require_once('fungsi.php');
 $TimeZone="+7";
 $_time=gmdate("H", time() + ($TimeZone * 60 * 60));
-
+$jml = 0;
 $_SESSION['data'] = array('cookies' => 'ds_user=jualfollowers_indo009;rur=FRC;mid=W6cTJQABAAH5Ucm4xr8STm7NoA-E;ds_user_id=2535286616;urlgen="{}:1g3vmv:FCtlGdnSL5PQcZ6GaFXVL10EnJk";sessionid=IGSC701028364401ca6ad3c951a6de1a50542f527b0b293ae7c1451c6446a7e58433%3ALeJMfQNcdaPGR21vbb4qd0oVa3GwL8SL%3A%7B%22_auth_user_id%22%3A2535286616%2C%22_auth_user_backend%22%3A%22accounts.backends.CaseInsensitiveModelBackend%22%2C%22_auth_user_hash%22%3A%22%22%2C%22_platform%22%3A1%2C%22_token_ver%22%3A2%2C%22_token%22%3A%222535286616%3AEwD4bTVFngl65mZN5HpNZdRyPCVLLD1C%3A69a937d64526dd47fcc30898de59208ab2e68209ddc0c94ba9bac0801bc2d267%22%2C%22last_refreshed%22%3A1537676069.9282913208%7D;mcd=3;csrftoken=boJE4deTezsevI00dVGAgfUezsBNs6FR;', 'useragent' => 'Instagram 6.22.0 Android (11/1.3.1; 160; 768x1024; samsung; GT-I9100; GT-I9100; smdkc210; en_US)', 'device_id' => 'android-537de305e941fccdbba5627e3eefbb247', 'username' => 'jualfollowers_indo009', 'id' => '2535286616');
 while(true){
 	if($_time>6){
@@ -48,7 +48,7 @@ while(true){
 	for($i=0;$i<count($listids);$i++):
 			$cross = proccess(1, $data_session['useragent'], 'friendships/create/'.$listids[$i].'/', $data_session['cookies'], hook('{"user_id":"'.$listids[$i].'"}'));
 			$cross = json_decode($cross[1]);
-			print $i.'. <b>@'.$data_session['username'].' Follow => '.$listids[$i].PHP_EOL;
+			print ++$jml.'. <b>@'.$data_session['username'].' Follow => '.$listids[$i].PHP_EOL;
 			flush();
       $rand = [97,101,103,93,107,111,113,117];
      		sleep($rand[rand(0,7)]);
