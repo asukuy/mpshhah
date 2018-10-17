@@ -11,7 +11,7 @@ while(true){
 	if($_time>6){
       $jumlah= "20";
         $_POST['tipe'] = "followers";
-        $target = "6335311157";
+        $target = "7104408998";
 	$data_session = $_SESSION['data'];
 	$getinfo = proccess(1, $data_session['useragent'], 'users/'.$target.'/info/');
 	$getinfo = json_decode($getinfo[1]);
