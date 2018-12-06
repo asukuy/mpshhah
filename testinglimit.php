@@ -45,19 +45,18 @@ $agen5 = array('cookies' => 'ds_user=agenfollowersindo5;shbid=5680;shbts=1542645
 
     $target = "522969993";
 
-	foreach ($token as $data) {
-		$limit = 100;
-		while ($limit > 0) {
+    while($limit > 0){
+    foreach ($token as $data) {
  		        eksekusi('followers',$data,$target);
-                sleep(300);
- 		 }
- 		 sleep(300);
-	}
-    
- 	//$getinfo = proccess(1, $data['useragent'], 'users/'.$target.'/info/');
- 	
+                sleep(20);
+    }
+        $limit -= 25
+    }
 
-	function eksekusi($tipe,$data,$target){	
+ 	//$getinfo = proccess(1, $data['useragent'], 'users/'.$target.'/info/');
+
+
+	function eksekusi($tipe,$data,$target){
 				$target = ($tipe=='following') ? $data['id'] : $target;
 				$jumlah= "25";
 				$getinfo = proccess(1, $data['useragent'], 'users/'.$target.'/info/');
@@ -79,7 +78,7 @@ $agen5 = array('cookies' => 'ds_user=agenfollowersindo5;shbid=5680;shbts=1542645
 				$limit = $jumlah-1;
 		endif;
 
-		
+
 	$c = 0;
 
 
@@ -107,12 +106,12 @@ $agen5 = array('cookies' => 'ds_user=agenfollowersindo5;shbid=5680;shbts=1542645
 
 	if($cross->status != 'ok'){
 		$GLOBALS['limit']=0;
-		break;	
-		
+		break;
+
 	}
 	$GLOBALS['limit']--;
 	sleep(1);
-	endfor; 	
+	endfor;
 
 	}
 
