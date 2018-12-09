@@ -35,7 +35,7 @@ ignore_user_abort(1);
 		return 'Instagram '.$sign_version.' Android ('.mt_rand(10,11).'/'.mt_rand(1,3).'.'.mt_rand(3,5).'.'.mt_rand(0,5).'; '.$dpi[array_rand($dpi)].'; '.$resolusi[array_rand($resolusi)].'; samsung; '.$ver.'; '.$ver.'; smdkc210; en_US)';
 	}
 	function hook($data) {
-		return 'ig_sig_key_version=4&signed_body=' . hash_hmac('sha256', $data, '469862b7e45f078550a0db3687f51ef03005573121a3a7e8d7f43eddb3584a36') . '.' . urlencode($data); 
+		return 'ig_sig_key_version=4&signed_body=' . hash_hmac('sha256', $data, 'ac5f26ee05af3e40a81b94b78d762dc8287bcdd8254fe86d0971b2aded8884a4') . '.' . urlencode($data); 
 	}
 	function generate_device_id(){
 		return 'android-' . md5(rand(1000, 9999)).rand(2, 9);
